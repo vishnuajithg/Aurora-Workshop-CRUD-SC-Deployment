@@ -17,7 +17,7 @@ export default function UpdateUserForm() {
 
     try {
       // Call the updateUser function from utils.js
-      const transaction = await updateUser(userId, name, favNumr);
+      const transaction = await updateUser(userId, name, favNumber);
       setSuccess("User update successfully!");
       console.log("Transaction:", transaction);
     } catch (err) {
