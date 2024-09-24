@@ -56,7 +56,7 @@ export async function deleteUser(userId) {
 export async function updateUser(userId, name, favNum) {
     await connectWithMetamask();
     const contract = new ethers.Contract(contractAddress, contractAbi, signer);
-    const tx = await  contract.updateUser((userId, name, favNum));
+    const tx = await  contract.updateUser(userId, name, favNum);
     await tx.wait();
     console.log("user update transaction",tx);
     return tx;

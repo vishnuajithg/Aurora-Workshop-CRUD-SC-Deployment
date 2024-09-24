@@ -4,7 +4,7 @@ import { updateUser } from "../app/utils";
 export default function UpdateUserForm() {
   const [userId, setUserId] = useState("");
   const [name, setName] = useState("");
-  const [favNumber, setFavNumber] = useState("");
+  const [favNum, setFavNum] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -17,7 +17,7 @@ export default function UpdateUserForm() {
 
     try {
       // Call the updateUser function from utils.js
-      const transaction = await updateUser(userId, name, favNumber);
+      const transaction = await updateUser(userId, name, favNum);
       setSuccess("User update successfully!");
       console.log("Transaction:", transaction);
     } catch (err) {
@@ -69,8 +69,8 @@ export default function UpdateUserForm() {
             <input
               id="favNumber"
               type="text"
-              value={favNumber}
-              onChange={(e) => setFavNumber(e.target.value)}
+              value={favNum}
+              onChange={(e) => setFavNum(e.target.value)}
               placeholder="favNumber"
               className="w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-1 focus:ring-black"
             />
